@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./to-do-folder.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="modal__container hidden">
+                <div class="modal">
+                    <button class="close__btn">X</button>
+                    <div class="title__container">
+                        <label for="title" class="title__label">Title</label>
+                        <input type="text" id="title" />
+                    </div>
+                    <div class="color__container">
+                        <label for="color" class="color__label">Color</label>
+                        <input type="color" id="color" />
+                    </div>
+                    <button class="create__folder">Create Folder</button>
+                </div>
+            </div>
+            <aside class="folder__container">
+                <div class="sub__folder__container"></div>
+            </aside>
+            <button class="add__folder">+</button>
+        </div>
+        <script src="./javascript/background.js"></script>
+        <script src="./javascript/createFolder.js"></script>
+    </body>
+</html>

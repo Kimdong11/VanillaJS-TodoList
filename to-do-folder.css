@@ -65,6 +65,8 @@
 
 .sub__folder__container {
     display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .folder {
@@ -72,9 +74,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 20%;
 }
+
+/* .folder {
+    background-color: #556fed;
+} */
 
 .folder img {
     width: 35px;

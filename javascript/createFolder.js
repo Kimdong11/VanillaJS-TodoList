@@ -1,16 +1,19 @@
 //해야할 일!
 
-// 컨테이너를 구분해서 (폴더 3개씩) 로컬스토리지에 저장
-// 폴더명을 불러올 때 오류발생
+// 컨테이너를 구분해서 (폴더 3개씩) 로컬스토리지에 저장 (생각중...)
 // 폴더 정보를 생각해야함
 
+// 폴더명을 불러올 때 오류발생 (해결!)
+
 const modalContaienr = document.querySelector('.modal__container');
+const folderContainer = document.querySelector('.folder__container');
+
 const closeBtn = document.querySelector('.close__btn');
 const addBtn = document.querySelector('.add__folder');
 const createFolderBtn = document.querySelector('.create__folder');
+
 const titlte = document.getElementById('title');
 const color = document.getElementById('color');
-const folderContainer = document.querySelector('.folder__container');
 
 const HIDDEN = 'hidden';
 
@@ -71,16 +74,15 @@ const savingFolderInfo = () => {
 const displayFolders = () => {
     if (localStorage.getItem('count')) {
         const CONTAINER_NUM = JSON.parse(localStorage.getItem('count')).container;
-        const FOLDER_NUM = JSON.parse(localStorage.getItem('count')).folder;
+        // const FOLDER_NUM = JSON.parse(localStorage.getItem('count')).folder;
+        const FOLDER_NAME = JSON.parse(localStorage.getItem('folder_info')).title;
         for (let i = 0; i < CONTAINER_NUM; i++) {
-            createFolderConatainer();
-            for (let j = 0; j < FOLDER_NUM; j++) {
-                const title = JSON.parse(localStorage.getItem('folder_info')).title;
-                createFolder(title[j], 'black');
-            }
+            createFolderConatainer(FOLDER_NAME[i]);
+            // for (let j = 0; j < FOLDER_NUM; j++) {
+            //     const title = JSON.parse(localStorage.getItem('folder_info')).title;
+            //     createFolder(title[j], 'black');
+            // }
         }
-    } else {
-        createFolderConatainer();
     }
 };
 
